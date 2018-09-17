@@ -17,15 +17,13 @@ void loop() {
       val = Serial.read(); 
    }
    int partitions = 10;
-   
    if (val == '1') { 
       for(int i = 0; i < NUM_LEDS; i = i + NUM_LEDS/partitions) {
-      fill_solid(leds + i, (NUM_LEDS/partitions), CHSV(gHue,255, 255));
-      gHue += gHueDelta; // compute new hue 
-      gHue = gHue % 360;
-      FastLED.delay(10);
+        fill_solid(leds + i, (NUM_LEDS/partitions), CHSV(gHue,255, 255));
+        gHue += gHueDelta; // compute new hue 
+        gHue = gHue % 360;
+        FastLED.delay(10);
       }
    } 
-   
 }
 
