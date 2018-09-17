@@ -44,12 +44,15 @@ void setup()
   myPort = new Serial(this, portName, 9600);
 }
 
-void draw() {
-  if (beat.isKick()){                         
+void draw() 
+{
+  if (beat.isKick())
+  {                         
     myPort.write('1'); 
     println("1");
   } 
-  else {                          
+  else 
+  {                          
     myPort.write('0');
     println("0");
   }   
